@@ -1,0 +1,32 @@
+.root {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.open {
+    display: inline;
+}
+
+.content {
+    height: 100%;
+    width: 80%;
+    margin: 0;
+    background-color: #fff;
+    padding: 0;
+    animation-name: open;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(0.01, 1.09, 0.01, 0.99);
+}
+
+@keyframes open {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

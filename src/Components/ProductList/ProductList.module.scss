@@ -1,0 +1,23 @@
+.root {
+    list-style: none;
+    margin: 0 -1.5rem;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cols {
+    width: 50%;
+}
+
+@media only screen and (min-width: 560px) {
+    .cols {
+        width: 33.33333333%;
+    }
+}
+
+@media only screen and (min-width: 760px) {
+    .cols {
+        width: 25%;
+    }
+}

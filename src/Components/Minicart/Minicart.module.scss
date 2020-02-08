@@ -1,0 +1,21 @@
+.icon {
+    width: 50px;
+    padding: 0.5rem;
+    position: relative;
+    display: block;
+}
+.image {
+    width: 100%;
+}
+.badge {
+    position: absolute;
+    top: 4px;
+    left: 19px;
+    background: #ff9800;
+    padding: 1px 5px;
+    font-size: 0.75rem;
+    border-radius: 50%;
+}
+.dropdown {
+    display: none;
+}

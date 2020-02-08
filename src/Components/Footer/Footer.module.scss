@@ -1,0 +1,33 @@
+.linksSection {
+    padding: 1rem 0;
+    background-color: #efefef;
+}
+
+.innerLinksSection {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cols {
+    width: 100%;
+}
+
+@media only screen and (min-width: 560px) {
+    .cols {
+        width: 33.33333333%;
+    }
+}
+
+@media only screen and (min-width: 760px) {
+    .cols {
+        width: 25%;
+    }
+}
+
+.copywrite {
+    text-align: center;
+}
+

@@ -1,8 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
 import Cart from "../Components/Cart/Cart";
 
-export const Checkout = ({ cart }) => (
-    <div>
-        <Cart cart={cart} />
-    </div>
-);
+const Checkout = ({ cart }) => <div>{<Cart cart={cart} />}</div>;
+const mapStateToProps = ({ cart }) => ({ cart });
+
+export default connect(mapStateToProps)(Checkout);

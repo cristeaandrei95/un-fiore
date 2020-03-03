@@ -5,10 +5,10 @@ import styles from "./App.module.scss";
 import store from "./store";
 
 import Home from "./Pages/Home";
-import { Checkout } from "./Pages/Checkout";
-import { About } from "./Pages/About";
-import { ThankYou } from "./Pages/ThankYou";
-import { NotFound } from "./Pages/NotFound";
+import Checkout from "./Pages/Checkout";
+import About from "./Pages/About";
+import ThankYou from "./Pages/ThankYou";
+import NotFound from "./Pages/NotFound";
 
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";

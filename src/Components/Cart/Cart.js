@@ -43,15 +43,18 @@ const Cart = ({ cart }) => (
         <h2>Cos de cumparaturi</h2>
         <div>
             <CartHeader />
-            {Object.entries(cart).map(([key, { name, quantity, price }]) => (
-                <CartProduct
-                    name={name}
-                    alt={products[key].alt}
-                    src={products[key].src}
-                    quantity={quantity}
-                    price={price}
-                />
-            ))}
+            {Object.entries(cart.products).map(
+                ([key, { name, quantity, price }]) => (
+                    <CartProduct
+                        name={name}
+                        alt={products[key].alt}
+                        src={products[key].src}
+                        quantity={quantity}
+                        price={price}
+                        key={key}
+                    />
+                )
+            )}
         </div>
     </div>
 );

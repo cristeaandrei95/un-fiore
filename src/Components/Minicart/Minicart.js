@@ -7,7 +7,12 @@ const Minicart = ({ cart, updateCart }) => (
     <div className={styles.root}>
         <Link className={styles.icon} to='/checkout'>
             <img className={styles.image} src={minicart} alt='minicart' />
-            <span className={styles.badge}>{Object.keys(cart).length}</span>
+            <span className={styles.badge}>
+                {Object.entries(cart.products).reduce(
+                    (sum, [key, product]) => sum + product.quantity,
+                    0
+                )}
+            </span>
         </Link>
 
         {/* <div className={styles.dropdown}>

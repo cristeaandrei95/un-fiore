@@ -15,7 +15,17 @@ const CartHeader = () => (
     </div>
 );
 
-const CartProduct = ({ name, alt, src, quantity, price }) => (
+const CartProduct = ({
+    name,
+    alt,
+    src,
+    id,
+    quantity,
+    price,
+    incrementProductQuantity,
+    decrementProductQuantity,
+    removeFromCart
+}) => (
     <div>
         <div className={styles.product}>
             <img className={styles.productImage} src={src} alt={alt} />
@@ -23,9 +33,22 @@ const CartProduct = ({ name, alt, src, quantity, price }) => (
         </div>
         <div>
             <div className={styles.quantity}>
-                <button className={styles.quantityBtn}>-</button>
+                <button
+                    onClick={() => decrementProductQuantity(id)}
+                    className={styles.quantityBtn}>
+                    -
+                </button>
                 <span>{quantity}</span>
-                <button className={styles.quantityBtn}>+</button>
+                <button
+                    onClick={() => incrementProductQuantity(id)}
+                    className={styles.quantityBtn}>
+                    +
+                </button>
+                <button
+                    onClick={() => removeFromCart(id)}
+                    className={styles.quantityBtn}>
+                    remove item
+                </button>
             </div>
             <div className={styles.subtotal}>
                 <span className={styles.productPrice}>{price} lei</span>x
@@ -38,7 +61,12 @@ const CartProduct = ({ name, alt, src, quantity, price }) => (
     </div>
 );
 
-const Cart = ({ cart }) => (
+const Cart = ({
+    cart,
+    incrementProductQuantity,
+    decrementProductQuantity,
+    removeFromCart
+}) => (
     <div className={styles.root}>
         <h2>Cos de cumparaturi</h2>
         <div>
@@ -50,8 +78,12 @@ const Cart = ({ cart }) => (
                         alt={products[key].alt}
                         src={products[key].src}
                         quantity={quantity}
+                        id={key}
                         price={price}
                         key={key}
+                        incrementProductQuantity={incrementProductQuantity}
+                        decrementProductQuantity={decrementProductQuantity}
+                        removeFromCart={removeFromCart}
                     />
                 )
             )}

@@ -11,6 +11,14 @@
     flex-wrap: wrap;
 }
 
+.footerLink {
+    display: block;
+    font-size: 0.75rem;
+    color: #303030;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
 .cols {
     width: 100%;
 }
@@ -30,4 +38,3 @@
 .copywrite {
     text-align: center;
 }
-

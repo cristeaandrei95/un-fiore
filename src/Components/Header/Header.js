@@ -1,16 +1,21 @@
 import React from "react";
+import { connect } from "react-redux";
 import Minicart from "../Minicart/Minicart";
 import Hamburger from "../Hamburger/Hamburger";
 import Logo from "../Logo/Logo";
 import styles from "./Header.module.scss";
 
-const Header = ({ cart, updateCart, setDrawer }) => (
+const Header = ({ cart, setDrawer }) => (
     <header className={styles.root}>
-        <Hamburger setDrawer={setDrawer}/>
+        <Hamburger setDrawer={setDrawer} />
         <Logo />
         <div className='separator'></div>
-        <Minicart cart={cart} updateCart={updateCart} />
+        <Minicart cart={cart} />
     </header>
 );
 
-export default Header;
+const mapStateToProps = ({ cart }) => ({
+    cart
+});
+
+export default connect(mapStateToProps)(Header);

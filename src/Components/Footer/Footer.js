@@ -17,22 +17,22 @@ const Footer = () => (
             <div className={styles.innerLinksSection}>
                 <div className={styles.cols}>
                     <h4>Link-uri utile</h4>
-                    <a href="#a">Despre noi</a>
-                    <a href="#a">Despre livrare</a>
-                    <a href="#a">Despre securitate</a>
-                    <a href="#a">Satisfacție 100%</a>
-                    <a href="#a">Contact</a>
+                    <a className={styles.footerLink} href="#a">Despre noi</a>
+                    <a className={styles.footerLink} href="#a">Despre livrare</a>
+                    <a className={styles.footerLink} href="#a">Despre securitate</a>
+                    <a className={styles.footerLink} href="#a">Satisfacție 100%</a>
+                    <a className={styles.footerLink} href="#a">Contact</a>
                 </div>  
                 <div className={styles.cols}>
                     <h4>Informatii generale</h4>
-                    <a href="#a">Cum comand?</a>
-                    <a href="#a">Cum plătesc?</a>
-                    <a href="#a">Politica cookies</a>
-                    <a href="#a">Politica de confidențialitate</a>
-                    <a href="#a">Politica de returnare</a>
-                    <a href="#a">Termeni si Condiții</a>
-                    <a href="#a">comanda mea</a>
-                    <a href="#a">ANPC</a>
+                    <a className={styles.footerLink} href="#a">Cum comand?</a>
+                    <a className={styles.footerLink} href="#a">Cum plătesc?</a>
+                    <a className={styles.footerLink} href="#a">Politica cookies</a>
+                    <a className={styles.footerLink} href="#a">Politica de confidențialitate</a>
+                    <a className={styles.footerLink} href="#a">Politica de returnare</a>
+                    <a className={styles.footerLink} href="#a">Termeni si Condiții</a>
+                    <a className={styles.footerLink} href="#a">comanda mea</a>
+                    <a className={styles.footerLink} href="#a">ANPC</a>
                 </div>  
                 <div className={styles.cols}>
                     <h4>Contact</h4>

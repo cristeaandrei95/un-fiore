@@ -1,12 +1,11 @@
 import { ADD_TO_CART } from "./types";
 
-export const addToCart = ({ id, ...productData }) => (dispatch, getState) => {
+export const addToCart = ({ id, ...product }) => (dispatch, getState) => {
     const { cart } = getState();
-    const { products } = cart;
-    console.log(id);
+    const products = { ...cart.products };
 
-    if (!cart.products[id]) {
-        products[id] = { quantity: 1, productData };
+    if (!products[id]) {
+        products[id] = { quantity: 1, ...product };
     } else {
         products[id].quantity += 1;
     }

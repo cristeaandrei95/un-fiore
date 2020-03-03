@@ -1,0 +1,17 @@
+.root {
+    margin-top: 0.5rem;
+}
+
+.button {
+    font-size: 0.6rem;
+    border: 1px solid black;
+    background: none;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    &:hover {
+        background: #ff9800;
+        color: #fff;
+        border-color: #ff9800;
+        cursor: pointer;
+    }
+}

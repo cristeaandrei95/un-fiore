@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Cart.module.scss";
+import Button from "../Button/Button";
 import flowersArray from "../../Flowers.js";
 
 const products = flowersArray.reduce((obj, cur) => {
@@ -8,7 +9,7 @@ const products = flowersArray.reduce((obj, cur) => {
 }, {});
 
 const CartHeader = () => (
-    <div className={styles.cartHeader}>
+    <div className={styles.header}>
         <span>Produs</span>
         <span>Cantitate</span>
         <span>Subtotal</span>
@@ -26,33 +27,33 @@ const CartProduct = ({
     decrementProductQuantity,
     removeFromCart
 }) => (
-    <div>
-        <div className={styles.product}>
-            <img className={styles.productImage} src={src} alt={alt} />
-            <p className={styles.productName}>{name}</p>
+    <div className={styles.product}>
+        <div className={styles.info}>
+            <img className={styles.image} src={src} alt={alt} />
+            <h3 className={styles.productName}>{name}</h3>
+            <button className={styles.close} onClick={() => removeFromCart(id)}>
+                &times;
+            </button>
         </div>
-        <div>
+        <div className={styles.controls}>
             <div className={styles.quantity}>
-                <button
+                <Button
                     onClick={() => decrementProductQuantity(id)}
                     className={styles.quantityBtn}>
                     -
-                </button>
-                <span>{quantity}</span>
-                <button
+                </Button>
+                <span className={styles.quantityText}>{quantity}</span>
+                <Button
                     onClick={() => incrementProductQuantity(id)}
                     className={styles.quantityBtn}>
                     +
-                </button>
-                <button
-                    onClick={() => removeFromCart(id)}
-                    className={styles.quantityBtn}>
-                    remove item
-                </button>
+                </Button>
             </div>
             <div className={styles.subtotal}>
-                <span className={styles.productPrice}>{price} lei</span>x
-                <span className={styles.quantitySubtotal}>{quantity}</span>
+                <span className={styles.productPrice}>
+                    {price} lei x {quantity}
+                </span>
+                <span className={styles.quantitySubtotal}>=</span>
                 <span className={styles.subtotalPrice}>
                     {price * quantity} lei
                 </span>
@@ -67,26 +68,33 @@ const Cart = ({
     decrementProductQuantity,
     removeFromCart
 }) => (
-    <div className={styles.root}>
+    <div className={styles.cart}>
         <h2>Cos de cumparaturi</h2>
         <div>
             <CartHeader />
-            {Object.entries(cart.products).map(
-                ([key, { name, quantity, price }]) => (
-                    <CartProduct
-                        name={name}
-                        alt={products[key].alt}
-                        src={products[key].src}
-                        quantity={quantity}
-                        id={key}
-                        price={price}
-                        key={key}
-                        incrementProductQuantity={incrementProductQuantity}
-                        decrementProductQuantity={decrementProductQuantity}
-                        removeFromCart={removeFromCart}
-                    />
-                )
-            )}
+            <ul className={styles.productList}>
+                {Object.entries(cart.products).map(
+                    ([key, { name, quantity, price }]) => (
+                        <li className={styles.item} key={key}>
+                            <CartProduct
+                                name={name}
+                                alt={products[key].alt}
+                                src={products[key].src}
+                                quantity={quantity}
+                                id={key}
+                                price={price}
+                                incrementProductQuantity={
+                                    incrementProductQuantity
+                                }
+                                decrementProductQuantity={
+                                    decrementProductQuantity
+                                }
+                                removeFromCart={removeFromCart}
+                            />
+                        </li>
+                    )
+                )}
+            </ul>
         </div>
     </div>
 );

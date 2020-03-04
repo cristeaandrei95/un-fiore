@@ -8,7 +8,6 @@ const Product = ({ id, name, price, src, addToCart }) => (
         <h3 className={styles.name}>{name}</h3>
         <span className={styles.price}>{price} lei</span>
         <Button
-            label='Adauga in cos'
             onClick={() =>
                 addToCart({
                     id,
@@ -16,8 +15,9 @@ const Product = ({ id, name, price, src, addToCart }) => (
                     price,
                     src
                 })
-            }
-        />
+            }>
+            Adauga in cos
+        </Button>
     </div>
 );
 

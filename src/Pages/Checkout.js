@@ -16,13 +16,21 @@ const Checkout = ({ cart, incrementProductQuantity, decrementProductQuantity, re
       senderEmail: "",
       SMSNotificationConfirmation: "",
       NewsletterConfirmation: "",
-      isCompany: false
+      isCompany: false,
+      receiverName: "",
+      receiverSurname: "",
+      receiverPhone: "",
+      receiverAddress: "",
+      receiverCounty: "",
+      receiverCity: ""
     },
     onSubmit: values => {
       console.log(values);
       return values;
     }
   });
+
+  console.log(form);
 
   const cartTotal = Object.entries(cart.products).reduce(
     (sum, [key, product]) => sum + product.price * product.quantity,

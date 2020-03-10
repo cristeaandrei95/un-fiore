@@ -5,83 +5,53 @@ const ReceiverInfo = ({ form }) => (
   <div className={styles.root}>
     <h2 className={styles.title}>Cui trimiti cadoul?</h2>
     <input
-      className={styles.inputField}
+      className="inputField"
       type="text"
-      name="name"
+      name="receiverName"
       placeholder="Nume"
       onChange={form.handleChange}
-      value={form.values.name}
+      value={form.values.receiverName}
     />
     <input
-      className={styles.inputField}
+      className="inputField"
       type="text"
-      name="surname"
+      name="receiverSurname"
       placeholder="Prenume"
       onChange={form.handleChange}
-      value={form.values.surname}
+      value={form.values.receiverSurname}
     />
     <input
-      className={styles.inputField}
+      className="inputField"
       type="text"
-      name="phone"
-      placeholder="telefon"
+      name="receiverPhone"
+      placeholder="Telefon"
       onChange={form.handleChange}
-      value={form.values.phone}
+      value={form.values.receiverPhone}
     />
     <textarea
-      className={styles.inputField}
+      className="textareaField"
       type="text"
-      name="email"
-      placeholder="email"
+      name="receiverAddress"
+      placeholder="Strada, numar, bloc, ap..."
       onChange={form.handleChange}
-      value={form.values.email}
+      value={form.values.receiverAddress}
     />
-    <div className={styles.checkboxField}>
-      <input
-        type="checkbox"
-        id="sms-notification-confirmation"
-        name="SMSNotificationConfirmation"
-        onChange={form.handleChange}
-        value={form.values.SMSNotificationConfirmation}
-      />
-      <label htmlFor="newsletter-confirmation">Doresc sa fiu notificat prin SMS privind evolutia comenzii</label>
-    </div>
-    <div className={styles.checkboxField}>
-      <input
-        type="checkbox"
-        id="newsletter-confirmation"
-        name="NewsletterConfirmation"
-        onChange={form.handleChange}
-        value={form.values.NewsletterConfirmation}
-      />
-      <label htmlFor="newsletter-confirmation">
-        Vreau sa primesc cele mai bune oferte. Confirm ca am peste 18 ani.
-      </label>
-    </div>
-    <div className={styles.invoicing}>
-      <p>Doresc facturarea comenzii pe:</p>
-      <input
-        type="radio"
-        id="persoana-fizica"
-        checked={form.values.isCompany === false}
-        name="whatever"
-        value={true}
-        onChange={() => form.setFieldValue("isCompany", false)}
-      />
-      <label htmlFor="persoana-fizica">Persoana fizica</label>
-      <input
-        type="radio"
-        id="persoana-juridica"
-        checked={form.values.isCompany === true}
-        name="whatever"
-        value={false}
-        onChange={() => form.setFieldValue("isCompany", true)}
-      />
-      <label htmlFor="persoana-juridica">Persoana juridica</label>
-    </div>
-    <p className={styles.electornicInvoice}>
-      Factura se emite EXCLUSIV online si pe email. Nicio factura nu ajunge la beneficiarul cadoului.
-    </p>
+    <input
+      className="inputField"
+      type="text"
+      name="receiverCounty"
+      placeholder="Judet"
+      onChange={form.handleChange}
+      value={form.values.receiverCounty}
+    />
+    <input
+      className="inputField"
+      type="text"
+      name="receiverCity"
+      placeholder="Oras"
+      onChange={form.handleChange}
+      value={form.values.receiverCity}
+    />
   </div>
 );
 

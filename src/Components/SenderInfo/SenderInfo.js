@@ -5,7 +5,7 @@ const SenderInfo = ({ form }) => (
   <div className={styles.root}>
     <h2 className={styles.title}>Datele tale</h2>
     <input
-      className={styles.inputField}
+      className="inputField"
       type="text"
       name="senderName"
       placeholder="Nume"
@@ -13,7 +13,7 @@ const SenderInfo = ({ form }) => (
       value={form.values.senderName}
     />
     <input
-      className={styles.inputField}
+      className="inputField"
       type="text"
       name="senderSurname"
       placeholder="Prenume"
@@ -21,7 +21,7 @@ const SenderInfo = ({ form }) => (
       value={form.values.senderSurname}
     />
     <input
-      className={styles.inputField}
+      className="inputField"
       type="text"
       name="senderPhone"
       placeholder="telefon"
@@ -29,14 +29,14 @@ const SenderInfo = ({ form }) => (
       value={form.values.senderPhone}
     />
     <input
-      className={styles.inputField}
+      className="inputField"
       type="text"
       name="senderEmail"
       placeholder="email"
       onChange={form.handleChange}
       value={form.values.senderEmail}
     />
-    <div className={styles.checkboxField}>
+    <div className="checkboxField">
       <input
         type="checkbox"
         id="sms-notification-confirmation"
@@ -46,7 +46,7 @@ const SenderInfo = ({ form }) => (
       />
       <label htmlFor="newsletter-confirmation">Doresc sa fiu notificat prin SMS privind evolutia comenzii</label>
     </div>
-    <div className={styles.checkboxField}>
+    <div className="checkboxField">
       <input
         type="checkbox"
         id="newsletter-confirmation"

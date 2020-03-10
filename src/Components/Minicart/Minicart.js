@@ -4,18 +4,15 @@ import minicart from "../../assets/minicart.svg";
 import styles from "./Minicart.module.scss";
 
 const Minicart = ({ cart, updateCart }) => (
-    <div className={styles.root}>
-        <Link className={styles.icon} to='/checkout'>
-            <img className={styles.image} src={minicart} alt='minicart' />
-            <span className={styles.badge}>
-                {Object.entries(cart.products).reduce(
-                    (sum, [key, product]) => sum + product.quantity,
-                    0
-                )}
-            </span>
-        </Link>
+  <div className={styles.root}>
+    <Link className={styles.icon} to="/checkout">
+      <img className={styles.image} src={minicart} alt="minicart" />
+      <span className={styles.badge}>
+        {Object.entries(cart.products).reduce((sum, [key, product]) => sum + product.quantity, 0)}
+      </span>
+    </Link>
 
-        {/* <div className={styles.dropdown}>
+    {/* <div className={styles.dropdown}>
             {Object.keys(cart).map(productID => (
                 <MinicartProduct
                     key={productID}
@@ -33,7 +30,7 @@ const Minicart = ({ cart, updateCart }) => (
                 </Link>
             </div>
         </div> */}
-    </div>
+  </div>
 );
 
 // const MinicartProduct = ({ id, name, quantity, price }, updateCart) => {

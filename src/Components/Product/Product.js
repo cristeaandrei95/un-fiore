@@ -7,17 +7,20 @@ const Product = ({ id, name, price, src, addToCart }) => (
         <img className={styles.img} alt={name} src={src} />
         <h3 className={styles.name}>{name}</h3>
         <span className={styles.price}>{price} lei</span>
-        <Button
-            onClick={() =>
-                addToCart({
-                    id,
-                    name,
-                    price,
-                    src
-                })
-            }>
-            Adauga in cos
-        </Button>
+        <div className={styles.buttonWrapper}>
+            <Button
+                className={styles.button}
+                onClick={() =>
+                    addToCart({
+                        id,
+                        name,
+                        price,
+                        src
+                    })
+                }>
+                Adauga in cos
+            </Button>
+        </div>
     </div>
 );
 

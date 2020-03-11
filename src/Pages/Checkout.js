@@ -4,43 +4,62 @@ import { connect } from "react-redux";
 import CartProductList from "../Components/CartProductList/CartProductList";
 import SenderInfo from "../Components/SenderInfo/SenderInfo";
 import ReceiverInfo from "../Components/ReceiverInfo/ReceiverInfo";
+import Deliveryinfo from "../Components/DeliveryInfo/DeliveryInfo";
+import PaymentInfo from "../Components/PaymentInfo/PaymentInfo";
 import Button from "../Components/Button/Button";
 import { incrementProductQuantity, decrementProductQuantity, removeFromCart } from "../store/actions/cart";
 
 const Checkout = ({ cart, incrementProductQuantity, decrementProductQuantity, removeFromCart }) => {
-  const form = useFormik({
+  const senderForm = useFormik({
     initialValues: {
-      senderName: "",
-      senderSurname: "",
-      senderPhone: "",
-      senderEmail: "",
+      name: "",
+      surname: "",
+      phone: "",
+      email: "",
       SMSNotificationConfirmation: "",
       NewsletterConfirmation: "",
-      isCompany: false,
-      receiverName: "",
-      receiverSurname: "",
-      receiverPhone: "",
-      receiverAddress: "",
-      receiverCounty: "",
-      receiverCity: ""
-    },
-    onSubmit: values => {
-      console.log(values);
-      return values;
+      isCompany: false
     }
   });
 
-  console.log(form);
+  const receiverForm = useFormik({
+    initialValues: {
+      name: "",
+      surname: "",
+      phone: "",
+      message: ""
+    }
+  });
+
+  const deliveryForm = useFormik({
+    initialValues: {
+      date: "",
+      time: "",
+      address: "",
+      city: "",
+      county: "",
+      optionalInfo: ""
+    }
+  });
+
+  const paymentForm = useFormik({
+    initialValues: {
+      paymentType: true,
+      termsAndConditionsAgreement: false
+    }
+  });
 
   const cartTotal = Object.entries(cart.products).reduce(
     (sum, [key, product]) => sum + product.price * product.quantity,
     0
   );
 
+  const handleSubmit = () => {};
+
   return (
     <div>
       {Object.entries(cart.products).length ? (
-        <form onSubmit={form.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <CartProductList
             cartTotal={cartTotal}
             cart={cart}
@@ -49,10 +68,10 @@ const Checkout = ({ cart, incrementProductQuantity, decrementProductQuantity, re
             removeFromCart={removeFromCart}
           />
 
-          <SenderInfo form={form} />
-          <ReceiverInfo form={form} />
-          {/* <Deliveryinfo />
-                    <PaymentInfo /> */}
+          <SenderInfo form={senderForm} />
+          <ReceiverInfo form={receiverForm} />
+          <Deliveryinfo form={deliveryForm} />
+          <PaymentInfo form={paymentForm} />
 
           <Button type="submit">Finalizeaza comanda!</Button>
         </form>

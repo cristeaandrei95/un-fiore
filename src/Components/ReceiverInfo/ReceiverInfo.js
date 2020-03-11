@@ -7,50 +7,34 @@ const ReceiverInfo = ({ form }) => (
     <input
       className="inputField"
       type="text"
-      name="receiverName"
+      name="name"
       placeholder="Nume"
       onChange={form.handleChange}
-      value={form.values.receiverName}
+      value={form.values.name}
     />
     <input
       className="inputField"
       type="text"
-      name="receiverSurname"
+      name="surname"
       placeholder="Prenume"
       onChange={form.handleChange}
-      value={form.values.receiverSurname}
+      value={form.values.surname}
     />
     <input
       className="inputField"
       type="text"
-      name="receiverPhone"
+      name="phone"
       placeholder="Telefon"
       onChange={form.handleChange}
-      value={form.values.receiverPhone}
+      value={form.values.phone}
     />
     <textarea
       className="textareaField"
       type="text"
-      name="receiverAddress"
-      placeholder="Strada, numar, bloc, ap..."
+      name="message"
+      placeholder="Mesajul tau ..."
       onChange={form.handleChange}
-      value={form.values.receiverAddress}
-    />
-    <input
-      className="inputField"
-      type="text"
-      name="receiverCounty"
-      placeholder="Judet"
-      onChange={form.handleChange}
-      value={form.values.receiverCounty}
-    />
-    <input
-      className="inputField"
-      type="text"
-      name="receiverCity"
-      placeholder="Oras"
-      onChange={form.handleChange}
-      value={form.values.receiverCity}
+      value={form.values.message}
     />
   </div>
 );

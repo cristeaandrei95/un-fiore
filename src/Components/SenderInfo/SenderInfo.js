@@ -7,34 +7,34 @@ const SenderInfo = ({ form }) => (
     <input
       className="inputField"
       type="text"
-      name="senderName"
+      name="name"
       placeholder="Nume"
       onChange={form.handleChange}
-      value={form.values.senderName}
+      value={form.values.name}
     />
     <input
       className="inputField"
       type="text"
-      name="senderSurname"
+      name="surname"
       placeholder="Prenume"
       onChange={form.handleChange}
-      value={form.values.senderSurname}
+      value={form.values.surname}
     />
     <input
       className="inputField"
       type="text"
-      name="senderPhone"
+      name="phone"
       placeholder="telefon"
       onChange={form.handleChange}
-      value={form.values.senderPhone}
+      value={form.values.phone}
     />
     <input
       className="inputField"
       type="text"
-      name="senderEmail"
+      name="email"
       placeholder="email"
       onChange={form.handleChange}
-      value={form.values.senderEmail}
+      value={form.values.email}
     />
     <div className="checkboxField">
       <input

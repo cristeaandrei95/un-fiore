@@ -24,19 +24,19 @@ export default function App() {
                     <div className={styles.page}>
                         <Header setDrawer={setDrawer} />
                         <Switch>
-                            <Route exact path='/'>
+                            <Route exact path="/">
                                 <Home />
                             </Route>
-                            <Route path='/checkout'>
+                            <Route path="/checkout">
                                 <Checkout />
                             </Route>
-                            <Route path='/ThankYou'>
+                            <Route path="/ThankYou">
                                 <ThankYou />
                             </Route>
-                            <Route path='/about'>
+                            <Route path="/about">
                                 <About />
                             </Route>
-                            <Route path='/*'>
+                            <Route path="/*">
                                 <NotFound />
                             </Route>
                         </Switch>

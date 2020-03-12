@@ -17,7 +17,8 @@ const Product = ({ id, name, price, src, addToCart }) => (
                         price,
                         src
                     })
-                }>
+                }
+            >
                 Adauga in cos
             </Button>
         </div>

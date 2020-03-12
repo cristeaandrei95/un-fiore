@@ -7,13 +7,7 @@ const ProductList = ({ addToCart }) => (
     <ul className={styles.root}>
         {products.map(({ id, name, price, src }) => (
             <li className={styles.cols} key={id}>
-                <Product
-                    addToCart={addToCart}
-                    id={id}
-                    name={name}
-                    price={price}
-                    src={src}
-                />
+                <Product addToCart={addToCart} id={id} name={name} price={price} src={src} />
             </li>
         ))}
     </ul>

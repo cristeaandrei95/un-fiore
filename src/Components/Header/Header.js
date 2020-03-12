@@ -9,7 +9,7 @@ const Header = ({ cart, setDrawer }) => (
     <header className={styles.root}>
         <Hamburger setDrawer={setDrawer} />
         <Logo />
-        <div className='separator'></div>
+        <div className="separator"></div>
         <Minicart cart={cart} />
     </header>
 );

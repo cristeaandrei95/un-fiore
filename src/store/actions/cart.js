@@ -1,9 +1,4 @@
-import {
-    ADD_TO_CART,
-    REMOVE_FROM_CART,
-    INCREMENT_PRODUCT_QUANTITY,
-    DECREMENT_PRODUCT_QUANTITY
-} from "./types";
+import { ADD_TO_CART, REMOVE_FROM_CART, INCREMENT_PRODUCT_QUANTITY, DECREMENT_PRODUCT_QUANTITY } from "./types";
 
 export const addToCart = ({ id, ...product }) => (dispatch, getState) => {
     const { cart } = getState();

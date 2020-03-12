@@ -1,40 +1,47 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .separator {
-  flex: 1;
+    flex: 1;
 }
 
 .textareaField {
-  padding: 0.75rem;
-  margin: 0.5rem 0;
-  width: 100%;
-  border: 1px solid black;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    width: 100%;
+    border: 1px solid black;
 }
 
 .inputField {
-  padding: 0.75rem;
-  margin: 0.5rem 0;
-  width: 100%;
-  border: 1px solid black;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.selectField {
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    width: 100%;
+    border: 1px solid black;
 }
 
 .checkboxField {
-  margin-top: 0.5rem;
-  font-size: 0.75rem;
-  display: flex;
-  align-items: center;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
 }

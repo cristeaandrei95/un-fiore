@@ -14,7 +14,13 @@ const DeliveryInfo = ({ form }) => (
             selected={(form.values.date && new Date(form.values.date)) || null}
             onChange={val => form.setFieldValue("date", val)}
         />
-        <select name="time" value={form.values.time} onChange={form.handleChange} onBlur={form.handleBlur}>
+        <select
+            className="selectField"
+            name="time"
+            value={form.values.time}
+            onChange={form.handleChange}
+            onBlur={form.handleBlur}
+        >
             <option value="" label="Intervalul orar de livrare" />
             <option value="08:00 - 10:00" label="08:00 - 10:00" />
             <option value="10:00 - 12:00" label="10:00 - 12:00" />

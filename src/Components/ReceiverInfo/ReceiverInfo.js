@@ -42,7 +42,7 @@ const ReceiverInfo = ({ form: { errors, handleChange, values }, isSubmittedOnce 
             className="textareaField"
             type="text"
             name="message"
-            placeholder="Mesajul tau ..."
+            placeholder="Mesajul tau pe scrisoare... (optional)"
             onChange={handleChange}
             value={values.message}
         />

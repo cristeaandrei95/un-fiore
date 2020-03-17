@@ -1,7 +1,8 @@
 import React from "react";
+import classnames from "classnames";
 import styles from "./PaymentInfo.module.scss";
 
-const PaymentInfo = ({ form }) => (
+const PaymentInfo = ({ form: { errors, handleChange, values, setFieldValue }, isSubmittedOnce }) => (
     <div className={styles.root}>
         <h2 className={styles.title}>Metoda de plata</h2>
         <div className={styles.invoicing}>
@@ -9,10 +10,10 @@ const PaymentInfo = ({ form }) => (
                 <input
                     type="radio"
                     id="paymentType"
-                    checked={form.values.paymentType === "card"}
+                    checked={values.paymentType === "card"}
                     name="paymentType"
                     value="card"
-                    onChange={() => form.setFieldValue("paymentType", "card")}
+                    onChange={() => setFieldValue("paymentType", "card")}
                 />
                 <label htmlFor="paymentType">Plata online prin card</label>
             </div>
@@ -20,25 +21,28 @@ const PaymentInfo = ({ form }) => (
                 <input
                     type="radio"
                     id="persoana-juridica"
-                    checked={form.values.paymentType === "BT"}
+                    checked={values.paymentType === "BT"}
                     name="paymentType"
                     value="BT"
-                    onChange={() => form.setFieldValue("paymentType", "BT")}
+                    onChange={() => setFieldValue("paymentType", "BT")}
                 />
                 <label htmlFor="persoana-juridica">Transfer bancar</label>
             </div>
+            {isSubmittedOnce && <p className="formErrorMessage">{errors.paymentType}</p>}
         </div>
-        <div className="checkboxField">
+        <div className={classnames("checkboxField", styles.termsAndConditionsAgreement)}>
             <input
                 type="checkbox"
                 id="termsAndConditionsAgreement"
                 name="termsAndConditionsAgreement"
-                onChange={form.handleChange}
-                value={form.values.termsAndConditionsAgreement}
+                onChange={handleChange}
+                value={values.termsAndConditionsAgreement}
             />
             <label htmlFor="termsAndConditionsAgreement">
-                Confirm ca am citit si sunt de acord cu conditiile de utilizare.
+                Confirm ca am citit si sunt de acord cu termenii si conditiile de utilizare.
             </label>
+
+            {isSubmittedOnce && <p className="formErrorMessage">{errors.termsAndConditionsAgreement}</p>}
         </div>
     </div>
 );

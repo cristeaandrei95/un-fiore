@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import { connect } from "react-redux";
+import { withRouter } from "react-router";
 import CartProductList from "../Components/CartProductList/CartProductList";
 import SenderInfo from "../Components/SenderInfo/SenderInfo";
 import ReceiverInfo from "../Components/ReceiverInfo/ReceiverInfo";
@@ -10,7 +11,7 @@ import Button from "../Components/Button/Button";
 import styles from "./Checkout.module.scss";
 import { incrementProductQuantity, decrementProductQuantity, removeFromCart } from "../store/actions/cart";
 
-const Checkout = ({ cart, incrementProductQuantity, decrementProductQuantity, removeFromCart }) => {
+const Checkout = ({ history, cart, incrementProductQuantity, decrementProductQuantity, removeFromCart }) => {
     const [isSubmittedOnce, setIsSubmittedOnce] = useState(false);
     const form = useFormik({
         initialValues: {
@@ -72,7 +73,9 @@ const Checkout = ({ cart, incrementProductQuantity, decrementProductQuantity, re
 
             return errors;
         },
-        onSubmit: values => values
+        onSubmit: values => {
+            alert(JSON.stringify(values, null, 2));
+        }
     });
 
     const cartTotal = Object.entries(cart.products).reduce(
@@ -81,11 +84,14 @@ const Checkout = ({ cart, incrementProductQuantity, decrementProductQuantity, re
     );
 
     const handleSubmit = e => {
-        setIsSubmittedOnce(true);
-        // console.log(form);
-        //console.log(form);
-        form.validateForm();
         e.preventDefault();
+
+        if (isSubmittedOnce && !Object.keys(form.errors).length) {
+            history.push("/thank-you");
+        }
+
+        setIsSubmittedOnce(true);
+        form.validateForm();
     };
 
     return (
@@ -123,4 +129,4 @@ const mapDispatchToProps = dispatch => ({
     removeFromCart: id => dispatch(removeFromCart(id))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Checkout);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Checkout));

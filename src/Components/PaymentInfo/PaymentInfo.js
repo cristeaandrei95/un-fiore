@@ -5,24 +5,28 @@ const PaymentInfo = ({ form }) => (
     <div className={styles.root}>
         <h2 className={styles.title}>Metoda de plata</h2>
         <div className={styles.invoicing}>
-            <input
-                type="radio"
-                id="paymentType"
-                checked={form.values.paymentType === "card"}
-                name="paymentType"
-                value="card"
-                onChange={() => form.setFieldValue("paymentType", "card")}
-            />
-            <label htmlFor="paymentType">Plata online prin card</label>
-            <input
-                type="radio"
-                id="persoana-juridica"
-                checked={form.values.paymentType === "BT"}
-                name="paymentType"
-                value="BT"
-                onChange={() => form.setFieldValue("paymentType", "BT")}
-            />
-            <label htmlFor="persoana-juridica">Transfer bancar</label>
+            <div className="radioField">
+                <input
+                    type="radio"
+                    id="paymentType"
+                    checked={form.values.paymentType === "card"}
+                    name="paymentType"
+                    value="card"
+                    onChange={() => form.setFieldValue("paymentType", "card")}
+                />
+                <label htmlFor="paymentType">Plata online prin card</label>
+            </div>
+            <div className="radioField">
+                <input
+                    type="radio"
+                    id="persoana-juridica"
+                    checked={form.values.paymentType === "BT"}
+                    name="paymentType"
+                    value="BT"
+                    onChange={() => form.setFieldValue("paymentType", "BT")}
+                />
+                <label htmlFor="persoana-juridica">Transfer bancar</label>
+            </div>
         </div>
         <div className="checkboxField">
             <input

@@ -25,6 +25,10 @@ code {
     border: 1px solid black;
 }
 
+.inputFieldRoot {
+    position: relative;
+}
+
 .inputField {
     padding: 0.75rem;
     margin: 0.5rem 0;
@@ -32,16 +36,42 @@ code {
     border: 1px solid black;
 }
 
+.formError {
+    border-color: red;
+}
+
+.formErrorMessage {
+    margin: 0;
+    font-size: 10px;
+    color: red;
+    position: absolute;
+    bottom: -6px;
+}
+
 .selectField {
     padding: 0.75rem;
     margin: 0.5rem 0;
     width: 100%;
     border: 1px solid black;
+    border-radius: 0;
 }
 
 .checkboxField {
     margin-top: 0.5rem;
     font-size: 0.75rem;
     display: flex;
-    align-items: center;
+}
+
+.radioField {
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
 }

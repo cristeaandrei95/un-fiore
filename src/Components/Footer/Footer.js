@@ -1,22 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Footer.module.scss";
-
-const ObfuscatedNumber = () => {
-    const [numberVisibility, setNumberVisibility] = useState(false);
-    return (
-        <div onClick={() => setNumberVisibility(true)}>
-            {numberVisibility && <span>0720 000 000</span>}
-            <span>phone</span>
-        </div>
-    );
-};
 
 const Footer = () => (
     <footer>
         <section className={styles.linksSection}>
             <div className={styles.innerLinksSection}>
                 <div className={styles.cols}>
-                    <h4>Link-uri utile</h4>
+                    <h4 className={styles.title}>Link-uri utile</h4>
                     <a className={styles.footerLink} href="#a">
                         Despre noi
                     </a>
@@ -34,7 +24,7 @@ const Footer = () => (
                     </a>
                 </div>
                 <div className={styles.cols}>
-                    <h4>Informatii generale</h4>
+                    <h4 className={styles.title}>Informatii generale</h4>
                     <a className={styles.footerLink} href="#a">
                         Cum comand?
                     </a>
@@ -60,20 +50,24 @@ const Footer = () => (
                         ANPC
                     </a>
                 </div>
+                <div className="separator"></div>
                 <div className={styles.cols}>
-                    <h4>Contact</h4>
-                    <span>Mon - Fri: 8AM - midnight</span>
-                    <br />
-                    <span>Sat: 8AM - 8PM</span>
-                    <br />
-                    <span>Sun: 9AM - 6PM</span>
-                    <br />
-                    <ObfuscatedNumber />
+                    <h4 className={styles.title}>Contact</h4>
+                    <span className={styles.footerLink}>
+                        Telefon: <strong>0775 500 533</strong>
+                    </span>
+                    <span className={styles.footerLink}>
+                        Email: <strong>office@unfiore.ro</strong>
+                    </span>
+                    <h4 className={styles.title}>Program</h4>
+                    <span className={styles.footerLink}>Luni - Vineri: 08:00 - 20:00</span>
+                    <span className={styles.footerLink}>Sambata: 08:00 - 14:00</span>
+                    <span className={styles.footerLink}>Duminica: Inchis</span>
                 </div>
             </div>
         </section>
         <section className={styles.copywrite}>
-            <p>&copy; {new Date().getFullYear()} - floraria vesela</p>
+            <p className={styles.copywriteMessage}>&copy; {new Date().getFullYear()} - floraria vesela</p>
         </section>
     </footer>
 );

@@ -1,0 +1,13 @@
+.root {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    @media only screen and (min-width: 580px) {
+        min-height: calc(100vh - 363px);
+    }
+}
+
+.message {
+    width: 100%;
+}

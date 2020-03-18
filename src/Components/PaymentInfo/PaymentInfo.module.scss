@@ -1,8 +1,10 @@
 .root {
     margin: 0 -1.5rem;
     padding: 1.5rem;
+    min-width: 100%;
+    flex: 1;
     @media only screen and (min-width: 580px) {
-        width: 50%;
+        min-width: 50%;
         margin: 1.5rem 0;
     }
 }

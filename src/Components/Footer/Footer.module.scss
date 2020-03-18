@@ -1,6 +1,7 @@
 .linksSection {
     padding: 1rem 0;
     background-color: #efefef;
+    padding-bottom: 2rem;
 }
 
 .innerLinksSection {
@@ -19,22 +20,26 @@
     margin-top: 5px;
 }
 
+.title {
+    margin-top: 1rem;
+}
+
 .cols {
     width: 100%;
-}
-
-@media only screen and (min-width: 560px) {
-    .cols {
+    @media only screen and (min-width: 560px) {
         width: 33.33333333%;
     }
-}
 
-@media only screen and (min-width: 760px) {
-    .cols {
+    @media only screen and (min-width: 760px) {
         width: 25%;
     }
 }
 
 .copywrite {
+    padding: 15px;
+}
+
+.copywriteMessage {
     text-align: center;
+    margin: 0;
 }

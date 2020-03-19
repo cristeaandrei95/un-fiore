@@ -5,13 +5,19 @@
     min-width: 100%;
     flex: 1;
     @media only screen and (min-width: 580px) {
+        border-radius: 5px;
         min-width: 50%;
         margin: 1.5rem 0;
     }
 }
 
 .datePicker {
-    border: 1px solid #000;
+    border: 1px solid var(--dark-gray);
     padding: 0.75rem;
     margin: 0.5rem 0;
+    border-radius: 3px;
+}
+
+.selectDeliveryHours {
+    color: var(--dark-gray);
 }

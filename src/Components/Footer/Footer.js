@@ -67,7 +67,7 @@ const Footer = () => (
             </div>
         </section>
         <section className={styles.copywrite}>
-            <p className={styles.copywriteMessage}>&copy; {new Date().getFullYear()} - floraria vesela</p>
+            <p className={styles.copywriteMessage}>&copy; {new Date().getFullYear()} - Un Fiore</p>
         </section>
     </footer>
 );

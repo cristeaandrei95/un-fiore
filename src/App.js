@@ -4,11 +4,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styles from "./App.module.scss";
 import store from "./store";
 
-import Home from "./Pages/Home";
-import Checkout from "./Pages/Checkout";
-import About from "./Pages/About";
-import ThankYou from "./Pages/ThankYou";
-import NotFound from "./Pages/NotFound";
+import Home from "./Pages/Home/Home";
+import Checkout from "./Pages/Checkout/Checkout";
+import About from "./Pages/About/About";
+import ThankYou from "./Pages/ThankYou/ThankYou";
+import NotFound from "./Pages/NotFound/NotFound";
+import TermsAndConditions from "./Pages/TermsAndConditions/TermsAndConditions";
 
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
@@ -19,7 +20,7 @@ export default function App() {
     return (
         <Provider store={store}>
             <Router>
-                <Drawer drawer={drawer} setDrawer={setDrawer} />
+                <Drawer drawer={drawer} closeDrawer={() => setDrawer(false)} />
                 <div>
                     <div className={styles.page}>
                         <Header setDrawer={setDrawer} />
@@ -30,11 +31,14 @@ export default function App() {
                             <Route path="/checkout">
                                 <Checkout />
                             </Route>
-                            <Route path="/thank-you">
+                            <Route path="/multumim">
                                 <ThankYou />
                             </Route>
-                            <Route path="/about">
+                            <Route path="/despre">
                                 <About />
+                            </Route>
+                            <Route path="/termeni-si-conditii">
+                                <TermsAndConditions />
                             </Route>
                             <Route path="/*">
                                 <NotFound />

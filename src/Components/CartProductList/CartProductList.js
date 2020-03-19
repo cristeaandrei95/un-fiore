@@ -26,7 +26,7 @@ const Product = ({ id, name, quantity, price, incrementProductQuantity, decremen
         </div>
         <div className={styles.productBody}>
             <div className={styles.infoBlock}>
-                <span className={styles.infoBlockHeader}>cantitate</span>
+                <span className={classnames(styles.infoBlockHeader, styles.borderRadiusLeft)}>cantitate</span>
                 <div className={styles.selectQuantity}>
                     <Button type="button" className={styles.button} onClick={() => decrementProductQuantity(id)}>
                         -
@@ -42,11 +42,11 @@ const Product = ({ id, name, quantity, price, incrementProductQuantity, decremen
                 <span className={styles.price}>{price} lei</span>
             </div>
             <div className={styles.infoBlock}>
-                <span className={styles.infoBlockHeader}>subtotal</span>
+                <span className={classnames(styles.infoBlockHeader, styles.borderRadiusRightSubtotal)}>subtotal</span>
                 <span className={styles.price}>{price * quantity} lei</span>
             </div>
             <div className={classnames(styles.infoBlock, styles.trash)}>
-                <span className={styles.infoBlockHeader}>sterge</span>
+                <span className={classnames(styles.infoBlockHeader, styles.borderRadiusRight)}>sterge</span>
                 <TrashIcon className={styles.trashIcon} onClick={() => removeFromCart(id)} />
             </div>
         </div>

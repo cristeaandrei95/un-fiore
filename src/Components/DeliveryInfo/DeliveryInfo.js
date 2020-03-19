@@ -1,8 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import classnames from "classnames";
 import DatePicker from "react-datepicker";
 import styles from "./DeliveryInfo.module.scss";
 import "react-datepicker/dist/react-datepicker.css";
+
+const SelectDeliveryHours = ({ isSubmittedOnce, errors, values, handleChange }) => {
+    const [selectedOption, setSelectedOption] = useState("");
+
+    const options = [
+        "",
+        "08:00 - 10:00",
+        "10:00 - 12:00",
+        "12:00 - 14:00",
+        "14:00 - 16:00",
+        "16:00 - 18:00",
+        "18:00 - 20:00",
+        "20:00 - 22:00"
+    ];
+
+    const handleSelectChange = e => {
+        setSelectedOption(e.target.value);
+        handleChange(e);
+    };
+
+    return (
+        <select
+            className={classnames("selectField", {
+                formError: isSubmittedOnce && !!errors.time,
+                [styles.selectDeliveryHours]: Boolean(selectedOption)
+            })}
+            name="time"
+            value={values.time}
+            onChange={handleSelectChange}
+        >
+            {options.map(option => (
+                <option value={option} disabled={Boolean(!option)}>
+                    {option || "Intervalul orar de livrare"}
+                </option>
+            ))}
+        </select>
+    );
+};
 
 const DeliveryInfo = ({ form: { errors, handleChange, values, setFieldValue }, isSubmittedOnce }) => (
     <div className={styles.root}>
@@ -19,21 +57,29 @@ const DeliveryInfo = ({ form: { errors, handleChange, values, setFieldValue }, i
             {isSubmittedOnce && <p className="formErrorMessage">{errors.date}</p>}
         </div>
         <div className="inputFieldRoot">
-            <select
+            <SelectDeliveryHours
+                isSubmittedOnce={isSubmittedOnce}
+                errors={errors}
+                values={values}
+                handleChange={handleChange}
+            />
+            {/* <select
                 className={classnames("selectField", { formError: isSubmittedOnce && !!errors.time })}
                 name="time"
                 value={values.time}
                 onChange={handleChange}
             >
-                <option value="" label="Intervalul orar de livrare" />
-                <option value="08:00 - 10:00" label="08:00 - 10:00" />
-                <option value="10:00 - 12:00" label="10:00 - 12:00" />
-                <option value="12:00 - 14:00" label="12:00 - 14:00" />
-                <option value="14:00 - 16:00" label="14:00 - 16:00" />
-                <option value="16:00 - 18:00" label="16:00 - 18:00" />
-                <option value="18:00 - 20:00" label="18:00 - 20:00" />
-                <option value="20:00 - 22:00" label="20:00 - 22:00" />
-            </select>
+                <option value="" disabled selected>
+                    Intervalul orar de livrare
+                </option>
+                <option value="08:00 - 10:00">08:00 - 10:00</option>
+                <option value="10:00 - 12:00">10:00 - 12:00</option>
+                <option value="12:00 - 14:00">12:00 - 14:00</option>
+                <option value="14:00 - 16:00">14:00 - 16:00</option>
+                <option value="16:00 - 18:00">16:00 - 18:00</option>
+                <option value="18:00 - 20:00">18:00 - 20:00</option>
+                <option value="20:00 - 22:00">20:00 - 22:00</option>
+            </select> */}
             {isSubmittedOnce && <p className="formErrorMessage">{errors.time}</p>}
         </div>
         <div className="inputFieldRoot">

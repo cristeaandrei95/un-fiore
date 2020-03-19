@@ -22,12 +22,16 @@
 }
 
 .productInfo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     margin-left: 10px;
 }
 
 .productName {
     display: block;
     margin-bottom: 0;
+    width: 100%;
 }
 
 .productSKU {
@@ -40,7 +44,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 200;
     background: none;
     border: none;
@@ -55,6 +59,7 @@
     display: flex;
     margin-top: 10px;
     width: 100%;
+    color: var(--dark-gray);
     @media only screen and (min-width: 580px) {
         margin-top: 0;
         flex: 2;
@@ -70,6 +75,7 @@
 
 .image {
     width: 100%;
+    border-radius: 5px;
 }
 
 .productInfo {
@@ -97,7 +103,7 @@
     width: 20px;
     cursor: pointer;
     &:hover {
-        color: #ff9800;
+        color: var(--main-color);
     }
 }
 
@@ -139,4 +145,21 @@
     margin-top: 1.5rem;
     font-weight: bold;
     background-color: #eee;
+    color: var(--dark-gray);
+    border-radius: 5px;
+}
+
+.borderRadiusLeft {
+    border-radius: 5px 0 0 5px;
+}
+
+.borderRadiusRightSubtotal {
+    border-radius: 0 5px 5px 0;
+    @media only screen and (min-width: 580px) {
+        border-radius: 0;
+    }
+}
+
+.borderRadiusRight {
+    border-radius: 0 5px 5px 0;
 }

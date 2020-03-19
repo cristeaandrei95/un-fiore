@@ -15,7 +15,7 @@
 .footerLink {
     display: block;
     font-size: 0.75rem;
-    color: #303030;
+    color: var(--light-gray);
     text-decoration: none;
     margin-top: 5px;
 }
@@ -42,4 +42,6 @@
 .copywriteMessage {
     text-align: center;
     margin: 0;
+    color: var(--dark-gray);
+    font-size: 14px;
 }

@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import CartProductList from "../Components/CartProductList/CartProductList";
-import SenderInfo from "../Components/SenderInfo/SenderInfo";
-import ReceiverInfo from "../Components/ReceiverInfo/ReceiverInfo";
-import Deliveryinfo from "../Components/DeliveryInfo/DeliveryInfo";
-import PaymentInfo from "../Components/PaymentInfo/PaymentInfo";
-import Button from "../Components/Button/Button";
+import CartProductList from "../../Components/CartProductList/CartProductList";
+import SenderInfo from "../../Components/SenderInfo/SenderInfo";
+import ReceiverInfo from "../../Components/ReceiverInfo/ReceiverInfo";
+import Deliveryinfo from "../../Components/DeliveryInfo/DeliveryInfo";
+import PaymentInfo from "../../Components/PaymentInfo/PaymentInfo";
+import Button from "../../Components/Button/Button";
 import styles from "./Checkout.module.scss";
-import { incrementProductQuantity, decrementProductQuantity, removeFromCart } from "../store/actions/cart";
+import { incrementProductQuantity, decrementProductQuantity, removeFromCart } from "../../store/actions/cart";
 
 const Checkout = ({ history, cart, incrementProductQuantity, decrementProductQuantity, removeFromCart }) => {
     const [isSubmittedOnce, setIsSubmittedOnce] = useState(false);

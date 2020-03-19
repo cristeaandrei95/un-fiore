@@ -4,10 +4,11 @@
     background: none;
     text-transform: uppercase;
     padding: 0.5rem 1rem;
+    border-radius: 3px;
     &:hover {
-        background: #ff9800;
+        background: var(--main-color);
         color: #fff;
-        border-color: #ff9800;
+        border-color: var(--main-color);
         cursor: pointer;
     }
 }

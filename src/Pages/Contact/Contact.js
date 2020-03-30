@@ -33,6 +33,7 @@ const Contact = () => {
 
     // require params
     const sendEmail = () => {
+        console.log(values);
         console.log("POST message to emailing function");
     };
 
@@ -113,7 +114,9 @@ const Contact = () => {
                     </div>
 
                     <div className={styles.submit}>
-                        <Button type="submit">Trimite mesajul!</Button>
+                        <Button type="submit" onClick={handleSubmit}>
+                            Trimite mesajul!
+                        </Button>
                     </div>
                 </form>
             </div>

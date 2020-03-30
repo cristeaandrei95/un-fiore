@@ -18,6 +18,9 @@
     color: var(--light-gray);
     text-decoration: none;
     margin-top: 5px;
+    &:hover {
+        color: var(--dark-gray);
+    }
 }
 
 .title {

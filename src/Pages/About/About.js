@@ -1,37 +1,38 @@
 import React from "react";
+import styles from "./About.module.scss";
 
 const About = () => (
     <div>
-        <h2>Despre noi</h2>
-        <p>
-            O poveste despre flori, oameni si momente speciale Floria este o afacere nascuta din pasiunea pentru flori
-            si dragostea pentru frumos, pe 18 iulie 2010. Cu o evolutie excelenta pe piata, Floria.ro este magazinul
-            online, care ofera clientilor creatii florale unice, cu un design in acord cu tendintele din lumea modei
-            internationale, dar adaptat la cerintele pietei din Romania. Echipa Floria - suntem bucurosi de oameni
-            valorosi! Floria crede in oameni. Stim ca vom creste doar datorita lor. Asadar, echipa noastra este una
-            dintre cele mai mari mandrii. Investim in permanenta in oameni. Am adus impreuna specialisti in mai multe
-            domenii, cu pasiuni comune: pentru frumos si flori. Probabil, echipa fetelor din call-center ar castiga
-            detasat un concurs de comunicare, dar si unul de biologie: cunosc toate florile, dupa specii, soiuri si
-            denumiri in latina. Echipa de marketing are un task principal: sa stie oricand, orice. E greu sa nu gasesti
-            raspunsul la ei! De oamenii de la financiar ne este chiar si noua putin frica: sunt capabili sa faca cele
-            mai complicate calcule si previziuni in cateva secunde. Fara modestie, avem doar un lucru de spus: suntem
-            bucurosi de oameni valorosi!
+        <h2 className={styles.title}>Despre noi</h2>
+        <h3 className={styles.subtitle}>Cine suntem?</h3>
+        <p className={styles.paragraph}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia orci in diam euismod, id blandit
+            tellus commodo. Suspendisse turpis erat, suscipit quis lorem sed, fermentum ornare leo. Phasellus vitae est
+            vitae diam auctor euismod. Cras at libero non nunc fermentum hendrerit. Integer non feugiat est. Nullam
+            porta dictum erat quis tincidunt. Aliquam ante nisl, ullamcorper quis est elementum, placerat egestas velit.
+            Maecenas maximus dolor auctor quam auctor eleifend. Sed finibus est at neque blandit sodales. Maecenas id
+            mauris eget sem dictum ultrices. Vivamus scelerisque, ex sit amet efficitur hendrerit, sem lectus accumsan
+            lorem, quis consectetur mauris neque quis magna.
         </p>
-        <h2>Cine suntem?</h2>
-        <ul>
-            <li>
-                Suntem o echipa tanara si entuziasta, dar cu o experienta vasta in retail, hotarata sa infrumuseteze cat
-                mai multe case.
-            </li>
-            <li>
-                Am pornit la drum in 2012 si deja suntem cel mai mare si mai indragit magazin online din Europa Centrala
-                si de Est cand vorbim despre mobilier, textile si decoratiuni.{" "}
-            </li>
-            <li>
-                Inspiram si infrumusetam case din 9 tari, iar asta inseamna ca… peste 100 de milioane de oameni din
-                Europa se pot bucura de colectiile noastre.
-            </li>
-        </ul>
+        <h3 className={styles.subtitle}>Ce oferim?</h3>
+        <p className={styles.paragraph}>
+            Nulla elit ipsum, tempor sed ipsum sit amet, dapibus lobortis massa. In felis risus, tempor vitae ipsum et,
+            dignissim lobortis nulla. Donec quis nisl justo. Vivamus tempor nisi non metus rhoncus bibendum. Etiam
+            ultricies quis augue at imperdiet. Sed consequat, ipsum non bibendum aliquet, sapien magna blandit nisi, sit
+            amet bibendum quam metus sit amet dui. Praesent non posuere erat, vel volutpat justo. Suspendisse potenti.
+        </p>
+        <h3 className={styles.subtitle}>De ce sa ne alegi pe noi?</h3>
+        <p className={styles.paragraph}>
+            Aenean sit amet pulvinar massa, sed tristique risus. Morbi mollis, nisl convallis efficitur blandit, purus
+            nibh dictum quam, et posuere sem tellus sit amet neque. Fusce dignissim quam in urna dictum finibus. Aenean
+            finibus nunc nisi, at mattis urna rutrum vitae. Fusce ullamcorper blandit mollis. Nullam semper, elit
+            commodo iaculis maximus, augue purus egestas ipsum, ac consectetur dui elit sit amet lorem. Etiam vestibulum
+            mauris sed leo maximus posuere. Sed dui sem, gravida at sodales a, pretium dignissim dolor. Nam vel
+            venenatis metus. Duis id nunc sagittis, tincidunt arcu at, feugiat nulla. Donec imperdiet tempus metus, ac
+            ornare libero rutrum eu. Morbi et nulla eget neque efficitur mollis. Phasellus condimentum risus purus, nec
+            scelerisque tellus pellentesque in. Quisque ipsum justo, egestas eget luctus vel, vulputate ac risus. Orci
+            varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        </p>
     </div>
 );
 

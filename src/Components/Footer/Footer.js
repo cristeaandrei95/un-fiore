@@ -20,7 +20,12 @@ const Footer = () => (
                     <Link className={styles.footerLink} to="/contact">
                         Contact
                     </Link>
-                    <a className={styles.footerLink} href="http://www.anpc.ro" target="_blank">
+                    <a
+                        className={styles.footerLink}
+                        href="http://www.anpc.ro"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         ANPC
                     </a>
                 </div>

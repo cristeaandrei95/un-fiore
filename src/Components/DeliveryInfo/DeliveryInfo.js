@@ -34,7 +34,7 @@ const SelectDeliveryHours = ({ isSubmittedOnce, errors, values, handleChange }) 
             onChange={handleSelectChange}
         >
             {options.map(option => (
-                <option value={option} disabled={Boolean(!option)}>
+                <option key={option} value={option} disabled={Boolean(!option)}>
                     {option || "Intervalul orar de livrare"}
                 </option>
             ))}

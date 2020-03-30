@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Footer.module.scss";
 
 const Footer = () => (
@@ -7,48 +8,36 @@ const Footer = () => (
             <div className={styles.innerLinksSection}>
                 <div className={styles.cols}>
                     <h4 className={styles.title}>Link-uri utile</h4>
-                    <a className={styles.footerLink} href="#a">
+                    <Link className={styles.footerLink} to="/despre-noi">
                         Despre noi
-                    </a>
-                    <a className={styles.footerLink} href="#a">
-                        Despre livrare
-                    </a>
-                    <a className={styles.footerLink} href="#a">
-                        Despre securitate
-                    </a>
-                    <a className={styles.footerLink} href="#a">
-                        Satisfacție 100%
-                    </a>
-                    <a className={styles.footerLink} href="#a">
-                        Contact
+                    </Link>
+                    <Link className={styles.footerLink} to="/intrebari-frecvente">
+                        Intrebari frecvente 
+                    </Link>
+                    <Link className={styles.footerLink} to="/termeni-si-conditii">
+                        Termeni si conditii 
+                    </Link>
+                    <Link className={styles.footerLink} to="/contact">
+                        Contact 
+                    </Link>
+                    <a className={styles.footerLink} href="http://www.anpc.ro">
+                        ANPC 
                     </a>
                 </div>
                 <div className={styles.cols}>
-                    <h4 className={styles.title}>Informatii generale</h4>
-                    <a className={styles.footerLink} href="#a">
+                    <h4 className={styles.title}>Informatii utile</h4>
+                    <Link className={styles.footerLink} to="/intrebari-frecvente#cum-comand">
                         Cum comand?
-                    </a>
-                    <a className={styles.footerLink} href="#a">
+                    </Link>
+                    <Link className={styles.footerLink} to="/intrebari-frecvente#informatii-comanda">
+                        Care este status-ul comenzii mele? 
+                    </Link>
+                    <Link className={styles.footerLink} to="/intrebari-frecvente#cum-platesc">
                         Cum plătesc?
-                    </a>
-                    <a className={styles.footerLink} href="#a">
-                        Politica cookies
-                    </a>
-                    <a className={styles.footerLink} href="#a">
+                    </Link>
+                    <Link className={styles.footerLink} to="/intrebari-frecvente#politica-confidentialitate">
                         Politica de confidențialitate
-                    </a>
-                    <a className={styles.footerLink} href="#a">
-                        Politica de returnare
-                    </a>
-                    <a className={styles.footerLink} href="#a">
-                        Termeni si Condiții
-                    </a>
-                    <a className={styles.footerLink} href="#a">
-                        comanda mea
-                    </a>
-                    <a className={styles.footerLink} href="#a">
-                        ANPC
-                    </a>
+                    </Link>
                 </div>
                 <div className="separator"></div>
                 <div className={styles.cols}>

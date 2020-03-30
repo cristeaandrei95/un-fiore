@@ -1,0 +1,18 @@
+.root {
+    display: none;
+
+    @media only screen and (min-width: 580px) {
+        display: flex;
+    }
+}
+
+.link {
+    margin-right: 1.5em;
+    color: var(--dark-grey);
+    font-weight: bold;
+    text-decoration: none;
+    &:hover {
+        color: var(--main-color);
+        text-decoration: underline;
+    }
+}

@@ -10,6 +10,7 @@ import About from "./Pages/About/About";
 import ThankYou from "./Pages/ThankYou/ThankYou";
 import NotFound from "./Pages/NotFound/NotFound";
 import TermsAndConditions from "./Pages/TermsAndConditions/TermsAndConditions";
+import FAQ from "./Pages/FAQ/FAQ";
 
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
@@ -34,11 +35,14 @@ export default function App() {
                             <Route path="/multumim">
                                 <ThankYou />
                             </Route>
-                            <Route path="/despre">
+                            <Route path="/despre-noi">
                                 <About />
                             </Route>
                             <Route path="/termeni-si-conditii">
                                 <TermsAndConditions />
+                            </Route>
+                            <Route path="/intrebari-frecvente">
+                                <FAQ />
                             </Route>
                             <Route path="/*">
                                 <NotFound />

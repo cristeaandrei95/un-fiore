@@ -36,8 +36,20 @@ code {
     position: relative;
 }
 
-input::placeholder {
-    color: var(--light-gray);
+input,
+textarea,
+select {
+    font-size: 1rem;
+    @media only screen and (min-width: 580px) {
+        font-size: 11px;
+    }
+}
+
+input,
+textarea {
+    &::placeholder {
+        color: var(--light-gray);
+    }
 }
 
 .inputField {

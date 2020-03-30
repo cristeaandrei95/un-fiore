@@ -4,7 +4,9 @@ import Button from "../Button/Button";
 
 const Product = ({ id, name, price, src, addToCart }) => (
     <div className={styles.root}>
-        <img className={styles.img} alt={name} src={src} />
+        <div>
+            <img className={styles.img} alt={name} src={src} />
+        </div>
         <h3 className={styles.name}>{name}</h3>
         <span className={styles.price}>{price} lei</span>
         <div className={styles.buttonWrapper}>

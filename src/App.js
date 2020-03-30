@@ -11,6 +11,7 @@ import ThankYou from "./Pages/ThankYou/ThankYou";
 import NotFound from "./Pages/NotFound/NotFound";
 import TermsAndConditions from "./Pages/TermsAndConditions/TermsAndConditions";
 import FAQ from "./Pages/FAQ/FAQ";
+import Contact from "./Pages/Contact/Contact";
 
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
@@ -43,6 +44,9 @@ export default function App() {
                             </Route>
                             <Route path="/intrebari-frecvente">
                                 <FAQ />
+                            </Route>
+                            <Route path="/contact">
+                                <Contact />
                             </Route>
                             <Route path="/*">
                                 <NotFound />

@@ -12,16 +12,16 @@ const Footer = () => (
                         Despre noi
                     </Link>
                     <Link className={styles.footerLink} to="/intrebari-frecvente">
-                        Intrebari frecvente 
+                        Intrebari frecvente
                     </Link>
                     <Link className={styles.footerLink} to="/termeni-si-conditii">
-                        Termeni si conditii 
+                        Termeni si conditii
                     </Link>
                     <Link className={styles.footerLink} to="/contact">
-                        Contact 
+                        Contact
                     </Link>
-                    <a className={styles.footerLink} href="http://www.anpc.ro">
-                        ANPC 
+                    <a className={styles.footerLink} href="http://www.anpc.ro" target="_blank">
+                        ANPC
                     </a>
                 </div>
                 <div className={styles.cols}>
@@ -30,7 +30,7 @@ const Footer = () => (
                         Cum comand?
                     </Link>
                     <Link className={styles.footerLink} to="/intrebari-frecvente#informatii-comanda">
-                        Care este status-ul comenzii mele? 
+                        Care este status-ul comenzii mele?
                     </Link>
                     <Link className={styles.footerLink} to="/intrebari-frecvente#cum-platesc">
                         Cum plătesc?

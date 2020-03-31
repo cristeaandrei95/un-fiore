@@ -4,14 +4,17 @@ import styles from "./Navigation.module.scss";
 
 const Navigation = ({ children, onClick, className, ...rest }) => (
     <nav className={styles.root}>
-        <Link className={styles.link} to="/despre-noi">
-            Despre noi
+        <Link className={styles.link} to="/blog">
+            Blog
         </Link>
         <Link className={styles.link} to="/intrebari-frecvente">
             Intrebari frecvente
         </Link>
+        <Link className={styles.link} to="/despre-noi">
+            Despre noi
+        </Link>
         <Link className={styles.link} to="/contact">
-            Contact 
+            Contact
         </Link>
     </nav>
 );

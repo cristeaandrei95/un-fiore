@@ -22,24 +22,82 @@
     }
 }
 
-// .hamburger {
-    .line {
-        width: 30px;
-        height: 1px;
-        background-color: #000;
-        z-index: 2;
+.hamburger {
+    font: inherit;
+    display: inline-block;
+    overflow: visible;
+    margin: 0;
+    padding: 15px;
+    cursor: pointer;
+    transition-timing-function: linear;
+    transition-duration: 0.15s;
+    transition-property: opacity, filter;
+    text-transform: none;
+    color: inherit;
+    border: 0;
+    background-color: transparent;
+
+    .hamburgerBox {
         position: relative;
-        // &.top {
-        //     position: relative;
-        //     top: -5px;
-        // }
-        // &.bottom {
-        //     position: relative;
-        //     top: -5px;
-        // }
+        display: inline-block;
+        width: 40px;
+        height: 24px;
     }
 
-//     &.open {
-//         color: red;
-//     }
-// }
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &.isActive {
+        .hamburgerInner {
+            transition-delay: 75ms;
+            transform: translate3d(0, 10px, 0) rotate(135deg);
+            &:before {
+                transition-delay: 0s;
+                opacity: 0;
+            }
+            &:after {
+                transition-delay: 75ms;
+                transform: translate3d(0, -20px, 0) rotate(-270deg);
+            }
+        }
+    }
+
+    .hamburgerInner,
+    .hamburgerInner:before,
+    .hamburgerInner:after {
+        position: absolute;
+        width: 40px;
+        height: 4px;
+        transition-timing-function: ease;
+        transition-duration: 0.15s;
+        transition-property: transform;
+        border-radius: 4px;
+        background-color: #000;
+    }
+
+    .hamburgerInner {
+        top: 50%;
+        display: block;
+        margin-top: -2px;
+        top: 2px;
+        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition-duration: 0.275s;
+        &:before,
+        &:after {
+            display: block;
+            content: "";
+        }
+
+        &:before {
+            top: -10px;
+            top: 10px;
+            transition: opacity 0.125s ease 0.275s;
+        }
+        &:after {
+            bottom: -10px;
+            top: 20px;
+            transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+    }
+}

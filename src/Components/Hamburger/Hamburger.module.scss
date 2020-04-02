@@ -27,7 +27,7 @@
     display: inline-block;
     overflow: visible;
     margin: 0;
-    padding: 15px;
+    padding: 10px;
     cursor: pointer;
     transition-timing-function: linear;
     transition-duration: 0.15s;
@@ -36,11 +36,13 @@
     color: inherit;
     border: 0;
     background-color: transparent;
+    z-index: 2;
+    position: relative;
 
     .hamburgerBox {
         position: relative;
         display: inline-block;
-        width: 40px;
+        width: 30px;
         height: 24px;
     }
 
@@ -50,15 +52,17 @@
 
     &.isActive {
         .hamburgerInner {
-            transition-delay: 75ms;
-            transform: translate3d(0, 10px, 0) rotate(135deg);
+            transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+            transform: rotate(765deg);
             &:before {
-                transition-delay: 0s;
+                top: 0;
                 opacity: 0;
+                transition-delay: 0s;
             }
             &:after {
-                transition-delay: 75ms;
-                transform: translate3d(0, -20px, 0) rotate(-270deg);
+                bottom: 0;
+                transform: rotate(90deg);
+                transition-delay: 0s;
             }
         }
     }
@@ -67,8 +71,8 @@
     .hamburgerInner:before,
     .hamburgerInner:after {
         position: absolute;
-        width: 40px;
-        height: 4px;
+        width: 30px;
+        height: 2px;
         transition-timing-function: ease;
         transition-duration: 0.15s;
         transition-property: transform;
@@ -80,9 +84,9 @@
         top: 50%;
         display: block;
         margin-top: -2px;
-        top: 2px;
-        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transition-duration: 0.275s;
+
+        transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+        transition-duration: 0.2s;
         &:before,
         &:after {
             display: block;
@@ -91,13 +95,18 @@
 
         &:before {
             top: -10px;
-            top: 10px;
-            transition: opacity 0.125s ease 0.275s;
+            transition-property: top, opacity;
+            transition-delay: 0.1s;
+            transition-timing-function: linear;
+            transition-duration: 0s;
         }
+
         &:after {
             bottom: -10px;
-            top: 20px;
-            transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition-property: bottom, transform;
+            transition-delay: 0.1s;
+            transition-timing-function: linear;
+            transition-duration: 0s;
         }
     }
 }

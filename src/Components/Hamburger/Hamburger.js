@@ -4,8 +4,8 @@ import styles from "./Hamburger.module.scss";
 
 const Hamburger = ({ isDrawerOpen, setIsDrawerOpen }) => (
     <div
+        className={styles.root}
         onClick={() => {
-            console.log("here");
             setIsDrawerOpen(!isDrawerOpen);
         }}
     >

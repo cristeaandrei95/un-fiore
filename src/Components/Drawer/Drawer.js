@@ -7,7 +7,9 @@ const Drawer = ({ inside, outside }) => {
 
     return (
         <div className={styles.root}>
-            <div className={classnames(styles.inside, { [styles.open]: isDrawerOpen })}>{inside}</div>
+            <div className={classnames(styles.inside, { [styles.open]: isDrawerOpen })}>
+                {inside({ isDrawerOpen, setIsDrawerOpen })}
+            </div>
 
             <div className={classnames(styles.outside, { [styles.open]: isDrawerOpen })}>
                 {outside({ isDrawerOpen, setIsDrawerOpen })}

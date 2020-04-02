@@ -1,18 +1,37 @@
 .root {
     display: none;
-
+    .link {
+        margin-right: 1.5em;
+        color: var(--dark-grey);
+        font-weight: bold;
+        text-decoration: none;
+        &:hover {
+            color: var(--main-color);
+            text-decoration: underline;
+        }
+    }
     @media only screen and (min-width: 580px) {
         display: flex;
     }
-}
-
-.link {
-    margin-right: 1.5em;
-    color: var(--dark-grey);
-    font-weight: bold;
-    text-decoration: none;
-    &:hover {
-        color: var(--main-color);
-        text-decoration: underline;
+    &.vertical {
+        display: flex;
+        flex-wrap: wrap;
+        .link {
+            margin-right: 1.5em;
+            color: var(--dark-grey);
+            font-weight: bold;
+            text-decoration: none;
+            width: 100%;
+            color: #fff;
+            padding: 1rem;
+            font-size: 22px;
+            &:hover {
+                color: var(--main-color);
+                text-decoration: underline;
+            }
+        }
+        @media only screen and (min-width: 580px) {
+            display: none;
+        }
     }
 }

@@ -23,7 +23,7 @@ const App = () => (
     <Provider store={store}>
         <Router>
             <Drawer
-                inside={<Navigation />}
+                inside={({ setIsDrawerOpen }) => <Navigation vertical onClick={() => setIsDrawerOpen(false)} />}
                 outside={({ isDrawerOpen, setIsDrawerOpen }) => (
                     <>
                         <Header isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />

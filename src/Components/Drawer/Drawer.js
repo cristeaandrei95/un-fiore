@@ -1,32 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import classnames from "classnames";
 import styles from "./Drawer.module.scss";
 
-const Drawer = ({ drawer, closeDrawer }) => (
-    <nav className={classnames(styles.root, { [styles.open]: drawer, [styles.closed]: !drawer })} onClick={closeDrawer}>
-        <ul className={styles.list} onClick={e => e.stopPropagation()}>
-            <li className={styles.item}>
-                <a className={styles.link} href="#a">
-                    Blog
-                </a>
-            </li>
-            <li className={styles.item}>
-                <a className={styles.link} href="#a">
-                    Faq
-                </a>
-            </li>
-            <li className={styles.item}>
-                <a className={styles.link} href="#a">
-                    Despre noi
-                </a>
-            </li>
-            <li className={styles.item}>
-                <a className={styles.link} href="#a">
-                    Termeni si conditii
-                </a>
-            </li>
-        </ul>
-    </nav>
-);
+const Drawer = ({ inside, outside }) => {
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+    return (
+        <div className={styles.root}>
+            <div className={classnames(styles.inside, { [styles.open]: isDrawerOpen })}>{inside}</div>
+
+            <div className={classnames(styles.outside, { [styles.open]: isDrawerOpen })}>
+                {outside({ isDrawerOpen, setIsDrawerOpen })}
+            </div>
+        </div>
+    );
+};
 
 export default Drawer;

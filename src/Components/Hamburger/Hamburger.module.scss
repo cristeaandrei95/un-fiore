@@ -1,13 +1,45 @@
-.root {
-    width: 50px;
-    padding: 0.5rem;
-    display: flex;
-    @media only screen and (min-width: 580px) {
-        display: none;
+.closeStrip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    z-index: 1;
+    display: none;
+    &.open {
+        display: block;
+        animation: closeStripOpenAnimation 0.5s forwards cubic-bezier(0.22, 0.28, 0.35, 1.42);
     }
 }
 
-.image {
-    width: 100%;
-    padding: 4px;
+@keyframes closeStripOpenAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.5;
+    }
 }
+
+// .hamburger {
+    .line {
+        width: 30px;
+        height: 1px;
+        background-color: #000;
+        z-index: 2;
+        position: relative;
+        // &.top {
+        //     position: relative;
+        //     top: -5px;
+        // }
+        // &.bottom {
+        //     position: relative;
+        //     top: -5px;
+        // }
+    }
+
+//     &.open {
+//         color: red;
+//     }
+// }

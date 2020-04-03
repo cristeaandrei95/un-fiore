@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classnames from "classnames";
 import { useFormik } from "formik";
 import Button from "../../Components/Button/Button";
@@ -6,8 +6,10 @@ import styles from "./Contact.module.scss";
 import contactUsImage from "../../assets/contact_us.svg";
 
 const Contact = () => {
+    const [isFormSubmitted, setIsFormSubmited] = useState(false);
     // require params
-    const sendEmail = () => {
+    const handleFormSubmission = () => {
+        setIsFormSubmited(true);
         console.log(values);
         console.log("POST message to emailing function");
     };
@@ -28,18 +30,19 @@ const Contact = () => {
             if (!name) errors.name = "Camp necesar";
             if (!surname) errors.surname = "Camp necesar";
             if (!email) errors.email = "Camp necesar";
+            if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email))
+                errors.email = "Email-ul introdus nu este valid";
             if (!subject) errors.subject = "Camp necesar";
             if (!message) errors.message = "Camp necesar";
 
             return errors;
         },
         onSubmit: values => {
-            console.log(values);
-            sendEmail(values);
+            handleFormSubmission(values);
         }
     });
 
-    return (
+    return !isFormSubmitted ? (
         <div className={styles.root}>
             <h2 className={styles.title}>Contact</h2>
             <div className={styles.col}>
@@ -111,6 +114,10 @@ const Contact = () => {
                     </div>
                 </form>
             </div>
+        </div>
+    ) : (
+        <div className="full-height-page">
+            <h2>Mesajul tau a fost trimis!</h2>
         </div>
     );
 };

@@ -69,6 +69,7 @@ const Checkout = ({ history, cart, incrementProductQuantity, decrementProductQua
             if (!receiverName) errors.receiverName = "Camp necesar";
             if (!receiverSurname) errors.receiverSurname = "Camp necesar";
             if (!receiverPhone) errors.receiverPhone = "Camp necesar";
+            if (!receiverPhone.length === 10) errors.receiverPhone = "Numarul introdus nu are 10 cifre";
             if (!date) errors.date = "Camp necesar";
             if (!time) errors.time = "Camp necesar";
             if (!address) errors.address = "Camp necesar";

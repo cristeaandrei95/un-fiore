@@ -2,7 +2,7 @@ import React from "react";
 import classnames from "classnames";
 import styles from "./PaymentInfo.module.scss";
 
-const PaymentInfo = ({ form: { errors, handleChange, values, setFieldValue }, isSubmittedOnce }) => (
+const PaymentInfo = ({ form: { errors, handleChange, values, setFieldValue } }) => (
     <div className={styles.root}>
         <h2 className={styles.title}>Metoda de plata</h2>
         <div className={styles.invoicing}>
@@ -28,7 +28,7 @@ const PaymentInfo = ({ form: { errors, handleChange, values, setFieldValue }, is
                 />
                 <label htmlFor="persoana-juridica">Transfer bancar</label>
             </div>
-            {isSubmittedOnce && <p className="formErrorMessage">{errors.paymentType}</p>}
+            {<p className="formErrorMessage">{errors.paymentType}</p>}
         </div>
         <div className={classnames("checkboxField", styles.termsAndConditionsAgreement)}>
             <input
@@ -42,7 +42,7 @@ const PaymentInfo = ({ form: { errors, handleChange, values, setFieldValue }, is
                 Confirm ca am citit si sunt de acord cu termenii si conditiile de utilizare.
             </label>
 
-            {isSubmittedOnce && <p className="formErrorMessage">{errors.termsAndConditionsAgreement}</p>}
+            {<p className="formErrorMessage">{errors.termsAndConditionsAgreement}</p>}
         </div>
     </div>
 );

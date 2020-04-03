@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
@@ -12,7 +12,11 @@ import styles from "./Checkout.module.scss";
 import { incrementProductQuantity, decrementProductQuantity, removeFromCart } from "../../store/actions/cart";
 
 const Checkout = ({ history, cart, incrementProductQuantity, decrementProductQuantity, removeFromCart }) => {
-    const [isSubmittedOnce, setIsSubmittedOnce] = useState(false);
+    const submitNewOrder = values => {
+        console.log("submit new order with values:", values);
+        history.push("/multumim");
+    };
+
     const form = useFormik({
         initialValues: {
             senderName: "",
@@ -74,7 +78,7 @@ const Checkout = ({ history, cart, incrementProductQuantity, decrementProductQua
             return errors;
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            submitNewOrder(values);
         }
     });
 
@@ -83,21 +87,10 @@ const Checkout = ({ history, cart, incrementProductQuantity, decrementProductQua
         0
     );
 
-    const handleSubmit = e => {
-        e.preventDefault();
-
-        if (isSubmittedOnce && !Object.keys(form.errors).length) {
-            history.push("/thank-you");
-        }
-
-        setIsSubmittedOnce(true);
-        form.validateForm();
-    };
-
     return (
         <div>
             {Object.entries(cart.products).length ? (
-                <form className={styles.form} onSubmit={handleSubmit}>
+                <form className={styles.form} onSubmit={form.handleSubmit}>
                     <CartProductList
                         cartTotal={cartTotal}
                         cart={cart}
@@ -106,10 +99,10 @@ const Checkout = ({ history, cart, incrementProductQuantity, decrementProductQua
                         removeFromCart={removeFromCart}
                     />
 
-                    <SenderInfo form={form} isSubmittedOnce={isSubmittedOnce} />
-                    <ReceiverInfo form={form} isSubmittedOnce={isSubmittedOnce} />
-                    <Deliveryinfo form={form} isSubmittedOnce={isSubmittedOnce} />
-                    <PaymentInfo form={form} isSubmittedOnce={isSubmittedOnce} />
+                    <SenderInfo form={form} />
+                    <ReceiverInfo form={form} />
+                    <Deliveryinfo form={form} />
+                    <PaymentInfo form={form} />
 
                     <div className={styles.submit}>
                         <Button type="submit">Finalizeaza comanda!</Button>

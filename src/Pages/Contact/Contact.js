@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import classnames from "classnames";
 import { useFormik } from "formik";
 import Button from "../../Components/Button/Button";
@@ -6,8 +6,13 @@ import styles from "./Contact.module.scss";
 import contactUsImage from "../../assets/contact_us.svg";
 
 const Contact = () => {
-    const [isSubmittedOnce, setIsSubmittedOnce] = useState(false);
-    const { values, handleChange, validateForm, errors } = useFormik({
+    // require params
+    const sendEmail = () => {
+        console.log(values);
+        console.log("POST message to emailing function");
+    };
+
+    const { values, handleChange, handleSubmit, errors } = useFormik({
         initialValues: {
             name: "",
             surname: "",
@@ -15,6 +20,8 @@ const Contact = () => {
             subject: "",
             message: ""
         },
+        validateOnChange: false,
+        validateOnBlur: false,
         validate: ({ name, surname, email, subject, message }) => {
             const errors = {};
 
@@ -27,26 +34,10 @@ const Contact = () => {
             return errors;
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            console.log(values);
+            sendEmail(values);
         }
     });
-
-    // require params
-    const sendEmail = () => {
-        console.log(values);
-        console.log("POST message to emailing function");
-    };
-
-    const handleSubmit = e => {
-        e.preventDefault();
-
-        if (isSubmittedOnce && !Object.keys(errors).length) {
-            sendEmail();
-        }
-
-        setIsSubmittedOnce(true);
-        validateForm();
-    };
 
     return (
         <div className={styles.root}>
@@ -58,59 +49,59 @@ const Contact = () => {
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <div className="inputFieldRoot">
                         <input
-                            className={classnames("inputField", { formError: isSubmittedOnce && !!errors.name })}
+                            className={classnames("inputField", { formError: !!errors.name })}
                             type="text"
                             name="name"
                             placeholder="Nume"
                             onChange={handleChange}
                             value={values.name}
                         />
-                        {isSubmittedOnce && <p className="formErrorMessage">{errors.surname}</p>}
+                        {<p className="formErrorMessage">{errors.name}</p>}
                     </div>
                     <div className="inputFieldRoot">
                         <input
-                            className={classnames("inputField", { formError: isSubmittedOnce && !!errors.surname })}
+                            className={classnames("inputField", { formError: !!errors.surname })}
                             type="text"
                             name="surname"
-                            placeholder="Nume"
+                            placeholder="Prenume"
                             onChange={handleChange}
                             value={values.surname}
                         />
-                        {isSubmittedOnce && <p className="formErrorMessage">{errors.surname}</p>}
+                        {<p className="formErrorMessage">{errors.surname}</p>}
                     </div>
                     <div className="inputFieldRoot">
                         <input
-                            className={classnames("inputField", { formError: isSubmittedOnce && !!errors.email })}
+                            className={classnames("inputField", { formError: !!errors.email })}
                             type="text"
                             name="email"
                             placeholder="Adresa de email"
                             onChange={handleChange}
                             value={values.email}
                         />
-                        {isSubmittedOnce && <p className="formErrorMessage">{errors.email}</p>}
+                        {<p className="formErrorMessage">{errors.email}</p>}
                     </div>
                     <div className="inputFieldRoot">
                         <input
-                            className={classnames("inputField", { formError: isSubmittedOnce && !!errors.subject })}
+                            className={classnames("inputField", { formError: !!errors.subject })}
                             type="text"
                             name="subject"
                             placeholder="subiect"
                             onChange={handleChange}
                             value={values.subject}
                         />
-                        {isSubmittedOnce && <p className="formErrorMessage">{errors.subject}</p>}
+                        {<p className="formErrorMessage">{errors.subject}</p>}
                     </div>
 
                     <div className="inputFieldRoot">
                         <textarea
-                            className={classnames("textareaField", { formError: isSubmittedOnce && !!errors.subject })}
+                            className={classnames("textareaField", { formError: !!errors.subject })}
                             type="text"
                             name="message"
                             placeholder="Mesajul tau pentru noi..."
                             onChange={handleChange}
                             value={values.message}
                         />
-                        {isSubmittedOnce && <p className="formErrorMessage">{errors.message}</p>}
+                        {<p className="formErrorMessage">{errors.message}</p>}
                     </div>
 
                     <div className={styles.submit}>

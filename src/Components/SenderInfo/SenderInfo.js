@@ -2,52 +2,52 @@ import React from "react";
 import styles from "./SenderInfo.module.scss";
 import classnames from "classnames";
 
-const SenderInfo = ({ form: { setFieldValue, handleChange, values, errors }, isSubmittedOnce }) => (
+const SenderInfo = ({ form: { setFieldValue, handleChange, values, errors } }) => (
     <div className={styles.root}>
         <h2 className={styles.title}>Datele tale</h2>
         <div className="inputFieldRoot">
             <input
-                className={classnames("inputField", { formError: isSubmittedOnce && !!errors.senderName })}
+                className={classnames("inputField", { formError: !!errors.senderName })}
                 type="text"
                 name="senderName"
                 placeholder="Nume"
                 onChange={handleChange}
                 value={values.senderName}
             />
-            {isSubmittedOnce && <p className="formErrorMessage">{errors.senderName}</p>}
+            <p className="formErrorMessage">{errors.senderName}</p>
         </div>
         <div className="inputFieldRoot">
             <input
-                className={classnames("inputField", { formError: isSubmittedOnce && !!errors.senderSurname })}
+                className={classnames("inputField", { formError: !!errors.senderSurname })}
                 type="text"
                 name="senderSurname"
                 placeholder="Prenume"
                 onChange={handleChange}
                 value={values.senderSurname}
             />
-            {isSubmittedOnce && <p className="formErrorMessage">{errors.senderSurname}</p>}
+            <p className="formErrorMessage">{errors.senderSurname}</p>
         </div>
         <div className="inputFieldRoot">
             <input
-                className={classnames("inputField", { formError: isSubmittedOnce && !!errors.senderPhone })}
+                className={classnames("inputField", { formError: !!errors.senderPhone })}
                 type="text"
                 name="senderPhone"
                 placeholder="telefon"
                 onChange={handleChange}
                 value={values.senderPhone}
             />
-            {isSubmittedOnce && <p className="formErrorMessage">{errors.senderPhone}</p>}
+            <p className="formErrorMessage">{errors.senderPhone}</p>
         </div>
         <div className="inputFieldRoot">
             <input
-                className={classnames("inputField", { formError: isSubmittedOnce && !!errors.senderEmail })}
+                className={classnames("inputField", { formError: !!errors.senderEmail })}
                 type="text"
                 name="senderEmail"
                 placeholder="Email"
                 onChange={handleChange}
                 value={values.senderEmail}
             />
-            {isSubmittedOnce && <p className="formErrorMessage">{errors.senderEmail}</p>}
+            <p className="formErrorMessage">{errors.senderEmail}</p>
         </div>
         <div className="checkboxField">
             <input

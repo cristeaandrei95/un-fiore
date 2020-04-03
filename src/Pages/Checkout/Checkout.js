@@ -39,6 +39,8 @@ const Checkout = ({ history, cart, incrementProductQuantity, decrementProductQua
             paymentType: false,
             termsAndConditionsAgreement: false
         },
+        validateOnChange: false,
+        validateOnBlur: false,
         validate: ({
             senderName,
             senderSurname,

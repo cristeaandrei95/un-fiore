@@ -4,11 +4,9 @@ import {
     INCREMENT_PRODUCT_QUANTITY,
     DECREMENT_PRODUCT_QUANTITY
 } from "../actions/types";
-import preloadedState from "./preloadedState";
 
 const initialState = {
-    products: {},
-    ...preloadedState
+    products: {}
 };
 
 const cart = (state = initialState, action) => {

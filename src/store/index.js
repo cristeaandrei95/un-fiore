@@ -5,6 +5,8 @@ import reducers from "./reducers";
 
 const loggerMiddleware = createLogger();
 
+const middlewares = [thunkMiddleware, process.env.NODE_ENV !== "production" && loggerMiddleware].filter(Boolean);
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export default createStore(reducers, composeEnhancers(applyMiddleware(thunkMiddleware, loggerMiddleware)));
+export default createStore(reducers, composeEnhancers(applyMiddleware(...middlewares)));

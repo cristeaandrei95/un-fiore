@@ -116,7 +116,9 @@ const Checkout = ({ history, cart, incrementProductQuantity, decrementProductQua
                     </div>
                 </form>
             ) : (
-                <p>Nu aveti produse in cos.</p>
+                <div className="full-height-page">
+                    <h2>Nu aveti produse in cos.</h2>
+                </div>
             )}
         </div>
     );

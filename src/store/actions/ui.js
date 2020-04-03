@@ -1,12 +1,13 @@
-import { SET_DRAWER } from "./types";
+// import { SET_DRAWER } from "./types";
 
-export const setDrawer = value => (dispatch, getState) => {
-    const { ui } = getState();
+// obsolete action, leaving it here as example for future UI actions.
+// export const setDrawer = value => (dispatch, getState) => {
+//     const { ui } = getState();
 
-    console.log(ui);
+//     console.log(ui);
 
-    dispatch({
-        type: SET_DRAWER,
-        payload: { ...ui, drawer: value }
-    });
-};
+//     dispatch({
+//         type: SET_DRAWER,
+//         payload: { ...ui, drawer: value }
+//     });
+// };
